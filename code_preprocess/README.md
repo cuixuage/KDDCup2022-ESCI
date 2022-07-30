@@ -24,4 +24,4 @@
 平衡数据集, 用于扩充complement、irrelevant数据集合   
   
 7_confidient_learning_filter.py  
-通过交叉验证, 删除"低置信度"的样本   
+通过交叉验证置信学习, 删除"低置信度"的样本   
