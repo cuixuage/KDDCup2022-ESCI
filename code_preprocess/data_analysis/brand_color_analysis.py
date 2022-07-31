@@ -4,7 +4,7 @@ from scipy.special import factorial
 import pandas as pd
 import string
 
-productid_file = "/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv"
+productid_file = "/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv"
 df = pd.read_csv(productid_file, na_values="", keep_default_na=True)
 print(df[df['product_locale'] == 'us'][df['product_id'] == 'B003O0MNGC'])
 

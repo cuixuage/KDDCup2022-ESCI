@@ -25,7 +25,7 @@ if not hashseed:
 """
 def product_id_index():
     product_index_map = dict()
-    productid_file = "/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv"
+    productid_file = "/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv"
     df = pd.read_csv(productid_file, na_values="", keep_default_na=True, usecols=['product_id', 'product_locale'])
     df = df.reset_index()  # make sure indexes pair with number of rows
     for index, row in df.iterrows():
@@ -35,8 +35,8 @@ def product_id_index():
     return product_index_map
 
 def title_analysis():
-    train_file = "/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/train-v0.2.csv"
-    test_public_file = "/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/test_public-v0.2.csv"
+    train_file = "/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/train-v0.2.csv"
+    test_public_file = "/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/test_public-v0.2.csv"
     train_pid_list = []
     test_public_pid_list = []
 
@@ -79,7 +79,7 @@ product_index_map = product_id_index()
 train_pid_list, test_public_pid_list = title_analysis()
 public_index = get_testpublic_20w_productid(product_index_map, train_pid_list, test_public_pid_list)
 private_index = get_testprivate_20w_productid(product_index_map, train_pid_list, test_public_pid_list)
-productid_file = "/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv"
+productid_file = "/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv"
 df = pd.read_csv(productid_file, na_values="", keep_default_na=True)
 
 ###数据a
@@ -118,7 +118,7 @@ print(shuffled_all_df.head())
 
 
 ########################### 3.sample 1w    -- 用于测试Train Valid
-productid_file = "/home/cuixuange/kddcup_2022/data_process/Product_shuffled_220W.csv"
+productid_file = "/home/kddcup_2022/data_process/Product_shuffled_220W.csv"
 df = pd.read_csv(productid_file, na_values="", keep_default_na=True)
 sample_df = df.iloc[0:10000]
 sample_df.to_csv("Product_shuffled_220W-head1w.csv", encoding='utf8', index=False)
@@ -130,7 +130,7 @@ print(sample_df.head())
     MLM Loss: From title    Eval耗时23分钟
     NSP Loss:
 """
-/home/cuixuange/kddcup_2022/data_process/flod_5_vaild.csv
+/home/kddcup_2022/data_process/flod_5_vaild.csv
 example_id,query,product_id,query_locale,esci_label,part_id,product_title,product_locale
 
 
@@ -140,7 +140,7 @@ example_id,query,product_id,query_locale,esci_label,part_id,product_title,produc
     Faked Query, Title按照泊松分布截取 、 Brand+Color按照泊松分布截取
     丰富Query多样性, 重复进行4遍 
 """
-productid_file = "/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv"
+productid_file = "/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv"
 # productid_file = "Product_shuffled_220W-head1w.csv"
 all_df = pd.read_csv(productid_file, na_values="", keep_default_na=True, usecols=['product_id','product_title','product_brand','product_color_name','product_locale'])
 all_df["TEXT"] =  all_df["product_title"].fillna('') + ' ' + all_df["product_brand"].fillna('') \
@@ -289,7 +289,7 @@ shuffled_all_df = pd.read_csv("Product_shuffled_220W_x4_NSP_in_pretrain.csv", na
 sample_df = shuffled_all_df.iloc[0:1000]
 # sample_df = shuffled_all_df
 
-# productid_file = "/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv"
+# productid_file = "/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv"
 # product_df = pd.read_csv(productid_file, na_values="", keep_default_na=True)
 
 # append_df = pd.merge(sample_df, product_df, how='left', left_on=['product_locale','product_id'], right_on=['product_locale', 'product_id'])

@@ -9,7 +9,7 @@ import pandas as pd
 import string
 # #######################################################1.Title数据集合, productid-locale语言重复性
 def title_analysis():
-    productid_file = "/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv"
+    productid_file = "/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv"
     df = pd.read_csv(productid_file, na_values="", keep_default_na=True)
     print(df[df['product_locale'] == 'us'][df['product_id'] == 'B003O0MNGC'])
     return df
@@ -160,8 +160,8 @@ brand_nums= 303626  color_nums= 244102
 
 # #######################################################3.训练集合、公开测试集合，两者title重复性分析
 # def title_analysis():
-#     train_file = "/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/train-v0.2.csv"
-#     test_public_file = "/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/test_public-v0.2.csv"
+#     train_file = "/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/train-v0.2.csv"
+#     test_public_file = "/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/test_public-v0.2.csv"
     
 #     train_pid_list = []
 #     test_public_pid_list = []

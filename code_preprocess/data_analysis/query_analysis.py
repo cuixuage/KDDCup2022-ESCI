@@ -12,8 +12,8 @@ import matplotlib.pyplot as plt
 
 #######################################################1.train、eval query共现
 def query_analysis():
-    train_file = "/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/train-v0.2.csv"
-    test_public_file = "/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/test_public-v0.2.csv"
+    train_file = "/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/train-v0.2.csv"
+    test_public_file = "/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/test_public-v0.2.csv"
     
     train_query_list = []
     test_public_query_list = []
@@ -220,7 +220,7 @@ def get_positive_num(val_list = []):
     return count
 
 def get_need_balance_query(input_file=""):
-    input_file = "/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/train-v0.2.csv"
+    input_file = "/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/train-v0.2.csv"
     query_dict = dict()
     with open(input_file, mode='r') as fin:
         for line in fin:

@@ -297,7 +297,7 @@ if __name__ == "__main__":
     predictor.prediction_setup()
     
     test_set_path = "./data/task_2_multiclass_product_classification/test_public-v0.3.csv.zip"
-    # test_set_path = "/home/cuixuange/kddcup_2022/data_process/extra_confident_learning/flod_20_01_valid_wi_es-ci-head1w.csv"
+    # test_set_path = "/home/kddcup_2022/data_process/extra_confident_learning/flod_20_01_valid_wi_es-ci-head1w.csv"
     # test_set_path = "./data/task_2_multiclass_product_classification/test_public-v0.3-head1000.csv.zip"
     # product_catalogue_path = "./data/task_2_multiclass_product_classification/product_catalogue-v0.3.csv.zip"
     product_catalogue_path = "./data/task_2_multiclass_product_classification/task2_task3_product_catalogue-v0.3.csv.zip"

@@ -55,7 +55,7 @@ def tokenizer_n_gram(df):
     return 'nan'
 
 # ################ 1.product char-3-gram分词     （小写、删除特殊字符、删除网页字符）
-# productid_file = "/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv"
+# productid_file = "/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv"
 # df = pd.read_csv(productid_file, na_values="", keep_default_na=True)
 # # df = df[df['product_locale'] == 'es'].iloc[5000:15000]
 # print(df.shape)
@@ -120,28 +120,28 @@ def query_test_tokenizer_n_gram(df):
                     query_test_ngrams[i_v] = 1               
     return 'nan'
 
-# query_file = '/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/train-v0.2.csv'
+# query_file = '/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/train-v0.2.csv'
 # df = pd.read_csv(query_file, na_values="", keep_default_na=True)
 # df['query_ngram'] = df.apply(query_train_tokenizer_n_gram, axis=1)
 # print(len(query_train_ngrams.keys()))
 # print(list(query_train_ngrams.keys())[0:10], list(query_train_ngrams.keys())[-10:])
 # write_dict_2_file('./extra_ngram/query_ngram_train.csv', query_train_ngrams)
 
-# query_file = '/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/test_public-v0.2.csv'
+# query_file = '/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/test_public-v0.2.csv'
 # df = pd.read_csv(query_file, na_values="", keep_default_na=True)
 # df['query_ngram'] = df.apply(query_test_tokenizer_n_gram, axis=1)
 # print(len(query_test_ngrams.keys()))
 # print(list(query_test_ngrams.keys())[0:10], list(query_test_ngrams.keys())[-10:])
 # write_dict_2_file('./extra_ngram/query_ngram_test.csv', query_test_ngrams)
 
-# query_file = '/home/cuixuange/kddcup_2022/v0.2_task1/data/processed/public/task_1_query-product_ranking/train-v0.2.csv'
+# query_file = '/home/kddcup_2022/v0.2_task1/data/processed/public/task_1_query-product_ranking/train-v0.2.csv'
 # df = pd.read_csv(query_file, na_values="", keep_default_na=True)
 # df['query_ngram'] = df.apply(query_train_tokenizer_n_gram, axis=1)
 # print(len(query_train_ngrams.keys()))
 # print(list(query_train_ngrams.keys())[0:10], list(query_train_ngrams.keys())[-10:])
 # write_dict_2_file('./extra_ngram/query_ngram_train_task1.csv', query_train_ngrams)
 
-# query_file = '/home/cuixuange/kddcup_2022/v0.2_task1/data/processed/public/task_1_query-product_ranking/test_public-v0.2.csv'
+# query_file = '/home/kddcup_2022/v0.2_task1/data/processed/public/task_1_query-product_ranking/test_public-v0.2.csv'
 # df = pd.read_csv(query_file, na_values="", keep_default_na=True)
 # df['query_ngram'] = df.apply(query_test_tokenizer_n_gram, axis=1)
 # print(len(query_test_ngrams.keys()))

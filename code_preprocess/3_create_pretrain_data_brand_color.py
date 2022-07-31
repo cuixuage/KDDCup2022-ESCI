@@ -26,7 +26,7 @@ if not hashseed:
 """
     删除特殊字符、转化为小写
 """
-productid_file = "/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv"
+productid_file = "/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv"
 df = pd.read_csv(productid_file, na_values="", keep_default_na=True)
 # print(df[df['product_locale'] == 'us'][df['product_id'] == 'B003O0MNGC'])
 
@@ -106,7 +106,7 @@ with open('./extra_vocab/color.txt', mode='r') as fin:
 print(len(brand_name_idx.keys()), len(color_name_idx.keys()), len(brand_name_set))
 print('idx=', brand_name_idx['mungoo mach mal anders'])
 
-productid_file = "/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv"
+productid_file = "/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv"
 product_df = pd.read_csv(productid_file, na_values="", keep_default_na=True)
 
 count_brand = 0

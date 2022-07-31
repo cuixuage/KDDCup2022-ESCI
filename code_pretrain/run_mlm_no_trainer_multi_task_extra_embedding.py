@@ -62,10 +62,10 @@ from transformers import (
 )
 from transformers.utils import get_full_repo_name
 from transformers.utils.versions import require_version
-os.environ['TRANSFORMERS_CACHE'] = '/home/cuixuange/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/'
-os.environ['HF_DATASETS_CACHE'] = '/home/cuixuange/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/datasets/'
-os.environ['HF_MODULES_CACHE'] = '/home/cuixuange/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/models/'
-os.environ['HF_METRICS_CACHE'] = '/home/cuixuange/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/metrics/'
+os.environ['TRANSFORMERS_CACHE'] = '/home/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/'
+os.environ['HF_DATASETS_CACHE'] = '/home/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/datasets/'
+os.environ['HF_MODULES_CACHE'] = '/home/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/models/'
+os.environ['HF_METRICS_CACHE'] = '/home/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/metrics/'
 
 logger = logging.getLogger(__name__)
 require_version("datasets>=1.8.0", "To fix: pip install -r examples/pytorch/language-modeling/requirements.txt")
@@ -250,8 +250,8 @@ def main():
         padding = "max_length" if args.pad_to_max_length else False
         fq_label_to_id = None
         # vaild_label_to_id = {"exact":1, "substitute":1, "complement":0, "irrelevant":0}
-        brand_vocab = get_vocab_from_file('/home/cuixuange/kddcup_2022/data_process/extra_vocab/brand.txt')
-        color_vocab = get_vocab_from_file('/home/cuixuange/kddcup_2022/data_process/extra_vocab/color.txt')
+        brand_vocab = get_vocab_from_file('/home/kddcup_2022/data_process/extra_vocab/brand.txt')
+        color_vocab = get_vocab_from_file('/home/kddcup_2022/data_process/extra_vocab/color.txt')
         def tokenize_function_train_mlm(examples):
             return tokenizer(examples["TEXT"], return_special_tokens_mask=True)  # lm_collator会处理special tokens; model.foward不会再存在
         

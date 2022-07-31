@@ -1,17 +1,17 @@
 source /etc/profile && source ~/.bashrc
 conda deactivate
 conda activate huggingface
-export TRANSFORMERS_CACHE="/home/cuixuange/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/"
-export HF_DATASETS_CACHE="/home/cuixuange/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/datasets/"
-export HF_MODULES_CACHE="/home/cuixuange/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/models/"
-export HF_METRICS_CACHE="/home/cuixuange/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/metrics/"
+export TRANSFORMERS_CACHE="/home/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/"
+export HF_DATASETS_CACHE="/home/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/datasets/"
+export HF_MODULES_CACHE="/home/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/models/"
+export HF_METRICS_CACHE="/home/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/metrics/"
 
-export DATA_DIR="/home/cuixuange/kddcup_2022/data_process/"
-export OUTOUT_DIR="/home/cuixuange/kddcup_2022/v0.2_train_pretrain/output"
+export DATA_DIR="/home/kddcup_2022/data_process/"
+export OUTOUT_DIR="/home/kddcup_2022/v0.2_train_pretrain/output"
 export CUDA_VISIBLE_DEVICES=3
 
-python3 /home/cuixuange/kddcup_2022/v0.2_train_pretrain/run_mlm_no_trainer_multi_task_extra_embedding.py \
-    --model_name_or_path '/home/cuixuange/kddcup_2022/huggingface_models/kddcup_2022/xlm-roberta-large' \
+python3 /home/kddcup_2022/v0.2_train_pretrain/run_mlm_no_trainer_multi_task_extra_embedding.py \
+    --model_name_or_path '/home/kddcup_2022/huggingface_models/kddcup_2022/xlm-roberta-large' \
     --mlm_max_seq_length 256 \
     --mlm_probability 0.15 \
     --pad_to_max_length \

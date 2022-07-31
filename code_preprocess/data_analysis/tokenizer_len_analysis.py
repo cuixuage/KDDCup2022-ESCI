@@ -21,15 +21,15 @@ if not hashseed:
 pd.set_option('display.max_colwidth', None)
 
 
-tokenizer = AutoTokenizer.from_pretrained('/home/cuixuange/kddcup_2022/huggingface_models/kddcup_2022/infoxlm-base', use_fast=False, truncation_side='right')
+tokenizer = AutoTokenizer.from_pretrained('/home/kddcup_2022/huggingface_models/kddcup_2022/infoxlm-base', use_fast=False, truncation_side='right')
 def get_tokens_len(item_str):
     return len(tokenizer.tokenize(item_str))
 def get_chars_len(item_str):
     return len(item_str)
 
 ######################   Title 侧数据分析
-task2_train_file = '/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/train-v0.2.csv'
-task2_product_file = '/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv'
+task2_train_file = '/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/train-v0.2.csv'
+task2_product_file = '/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv'
 df = pd.read_csv(task2_product_file, na_values="", keep_default_na=True)
 df = df[df['product_locale'] == 'jp'].iloc[10000:20000]
 
@@ -63,7 +63,7 @@ print(df['product_title_chars_lens'].describe(percentiles=[0.5, 0.75, 0.99]))
 # max,212.0,3660.0,1063.0,38.0,62.0
 
 # #######################   Query-侧数据分析
-# task2_train_file = '/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/train-v0.2.csv'
+# task2_train_file = '/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/train-v0.2.csv'
 # df = pd.read_csv(task2_train_file, na_values="", keep_default_na=True)
 # df = df[df['query_locale'] == 'jp'].iloc[1000:10000]
 

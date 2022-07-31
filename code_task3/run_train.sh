@@ -1,17 +1,17 @@
 source /etc/profile && source ~/.bashrc
 conda deactivate
 conda activate huggingface
-export TRANSFORMERS_CACHE="/home/cuixuange/kddcup_2022/v0.2_train_for_task3_embbag/.cache/huggingface/"
-export HF_DATASETS_CACHE="/home/cuixuange/kddcup_2022/v0.2_train_for_task3_embbag/.cache/huggingface/datasets/"
-export HF_MODULES_CACHE="/home/cuixuange/kddcup_2022/v0.2_train_for_task3_embbag/.cache/huggingface/models/"
-export HF_METRICS_CACHE="/home/cuixuange/kddcup_2022/v0.2_train_for_task3_embbag/.cache/huggingface/metrics/"
+export TRANSFORMERS_CACHE="/home/kddcup_2022/v0.2_train_for_task3_embbag/.cache/huggingface/"
+export HF_DATASETS_CACHE="/home/kddcup_2022/v0.2_train_for_task3_embbag/.cache/huggingface/datasets/"
+export HF_MODULES_CACHE="/home/kddcup_2022/v0.2_train_for_task3_embbag/.cache/huggingface/models/"
+export HF_METRICS_CACHE="/home/kddcup_2022/v0.2_train_for_task3_embbag/.cache/huggingface/metrics/"
 
-export DATA_DIR="/home/cuixuange/kddcup_2022/data_process/"
-export OUTOUT_DIR="/home/cuixuange/kddcup_2022/v0.2_train_for_task3_embbag/output/"
+export DATA_DIR="/home/kddcup_2022/data_process/"
+export OUTOUT_DIR="/home/kddcup_2022/v0.2_train_for_task3_embbag/output/"
 export CUDA_VISIBLE_DEVICES=0
 
-python3 /home/cuixuange/kddcup_2022/v0.2_train_for_task3_embbag/run_glue_no_trainer.py \
-    --model_name_or_path '/home/cuixuange/kddcup_2022/v0.2_train_pretrain/output/multi_task_mlm_fq_bc_loss_shuffled_large_model_3_continue_final' \
+python3 /home/kddcup_2022/v0.2_train_for_task3_embbag/run_glue_no_trainer.py \
+    --model_name_or_path '/home/kddcup_2022/v0.2_train_pretrain/output/multi_task_mlm_fq_bc_loss_shuffled_large_model_3_continue_final' \
     --max_length 256 \
     --pad_to_max_length \
     --per_device_train_batch_size 8 \

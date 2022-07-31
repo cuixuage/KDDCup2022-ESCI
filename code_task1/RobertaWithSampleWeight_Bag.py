@@ -42,7 +42,7 @@ class RobertaWithSampleWeight(RobertaPreTrainedModel):
         """
         _init_weights(config, self.char_emb_bag)
         _init_weights(config, self.country_emb)
-        npy_file = '/home/wangchenyang5/cxg_trial/kdd_cup_2022/data_process/extra_ngram/word2vec.wordvectors.vectors.npy'
+        npy_file = '/home/cxg_trial/kdd_cup_2022/data_process/extra_ngram/word2vec.wordvectors.vectors.npy'
         _init_char3_emb_weights(config, self.char_emb_bag, npy_file)
         # Initialize weights and apply final processing
         self.post_init()

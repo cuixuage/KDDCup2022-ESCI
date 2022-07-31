@@ -34,10 +34,10 @@ from transformers import (
 )
 from transformers.utils import get_full_repo_name
 from transformers.utils.versions import require_version
-os.environ['TRANSFORMERS_CACHE'] = '/home/wangchenyang5/cxg_trial/kdd_cup_2022/v0.2_train_for_task1_embbag/.cache/huggingface_new/'
-os.environ['HF_DATASETS_CACHE'] = '/home/wangchenyang5/cxg_trial/kdd_cup_2022/v0.2_train_for_task1_embbag/.cache/huggingface_new/datasets/'
-os.environ['HF_MODULES_CACHE'] = '/home/wangchenyang5/cxg_trial/kdd_cup_2022/v0.2_train_for_task1_embbag/.cache/huggingface_new/models/'
-os.environ['HF_METRICS_CACHE'] = '/home/wangchenyang5/cxg_trial/kdd_cup_2022/v0.2_train_for_task1_embbag/.cache/huggingface_new/metrics/'
+os.environ['TRANSFORMERS_CACHE'] = '/home/cxg_trial/kdd_cup_2022/v0.2_train_for_task1_embbag/.cache/huggingface_new/'
+os.environ['HF_DATASETS_CACHE'] = '/home/cxg_trial/kdd_cup_2022/v0.2_train_for_task1_embbag/.cache/huggingface_new/datasets/'
+os.environ['HF_MODULES_CACHE'] = '/home/cxg_trial/kdd_cup_2022/v0.2_train_for_task1_embbag/.cache/huggingface_new/models/'
+os.environ['HF_METRICS_CACHE'] = '/home/cxg_trial/kdd_cup_2022/v0.2_train_for_task1_embbag/.cache/huggingface_new/metrics/'
 
 
 
@@ -177,9 +177,9 @@ def main():
 
     # Some models have set the order of the labels to use, so let's make sure we do use it.
     label_to_id = None
-    brand_vocab = get_vocab_from_file('/home/wangchenyang5/cxg_trial/kdd_cup_2022/data_process/extra_vocab/brand.txt')
-    color_vocab = get_vocab_from_file('/home/wangchenyang5/cxg_trial/kdd_cup_2022/data_process/extra_vocab/color.txt')
-    emb_bag_vocab = get_vocab_from_file('/home/wangchenyang5/cxg_trial/kdd_cup_2022/data_process/extra_ngram/word2vec.wordvectors.vocab_char3.txt')
+    brand_vocab = get_vocab_from_file('/home/cxg_trial/kdd_cup_2022/data_process/extra_vocab/brand.txt')
+    color_vocab = get_vocab_from_file('/home/cxg_trial/kdd_cup_2022/data_process/extra_vocab/color.txt')
+    emb_bag_vocab = get_vocab_from_file('/home/cxg_trial/kdd_cup_2022/data_process/extra_ngram/word2vec.wordvectors.vocab_char3.txt')
     if (
         model.config.label2id != PretrainedConfig(num_labels=num_labels).label2id
         and args.task_name is not None
@@ -439,7 +439,7 @@ def main():
     )
 
     # Get the metric function
-    metric_spearmanr = load_metric("/home/wangchenyang5/cxg_trial/kdd_cup_2022/v0.2_train_for_task1_embbag/datasets_metric/spearmanr/spearmanr.py")
+    metric_spearmanr = load_metric("/home/cxg_trial/kdd_cup_2022/v0.2_train_for_task1_embbag/datasets_metric/spearmanr/spearmanr.py")
 
     # Train!
     total_batch_size = args.per_device_train_batch_size * accelerator.num_processes * args.gradient_accumulation_steps

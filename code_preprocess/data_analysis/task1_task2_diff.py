@@ -18,8 +18,8 @@ if not hashseed:
 
 
 # # 1.计算Product侧 diff, 涉及到是否需要重新Pretrain
-# task2_product_file = '/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv'
-# task1_product_file = '/home/cuixuange/kddcup_2022/v0.2_task1/data/processed/public/task_1_query-product_ranking/product_catalogue-v0.2.csv'
+# task2_product_file = '/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv'
+# task1_product_file = '/home/kddcup_2022/v0.2_task1/data/processed/public/task_1_query-product_ranking/product_catalogue-v0.2.csv'
 # task2_df = pd.read_csv(task2_product_file, na_values="", keep_default_na=True)
 # # task2_df = task1_df.iloc[5000:15000]
 # task1_df = pd.read_csv(task1_product_file, na_values="", keep_default_na=True)
@@ -53,9 +53,9 @@ if not hashseed:
 
 
 # 2.训练集合两者的diff, 涉及到训练集重复划分的问题
-task1_train_file = '/home/cuixuange/kddcup_2022/v0.2_task1/data/processed/public/task_1_query-product_ranking/train-v0.2.csv'
-task2_train_file = '/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/train-v0.2.csv'
-task3_train_file = '/home/cuixuange/kddcup_2022/v0.2_task3/data/processed/public/task_3_product_substitute_identification/train-v0.2.csv'
+task1_train_file = '/home/kddcup_2022/v0.2_task1/data/processed/public/task_1_query-product_ranking/train-v0.2.csv'
+task2_train_file = '/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/train-v0.2.csv'
+task3_train_file = '/home/kddcup_2022/v0.2_task3/data/processed/public/task_3_product_substitute_identification/train-v0.2.csv'
 task1_df = pd.read_csv(task1_train_file, na_values="", keep_default_na=True)
 # task1_df = task1_df.iloc[5000:15000]
 task2_df = pd.read_csv(task2_train_file, na_values="", keep_default_na=True)
@@ -118,7 +118,7 @@ task1_df_filter['example_id'] = 'from_task1'
 # 3.2 task1_df剩余数据  +  task2数据;  +task3数据
 task2_df_extra = pd.concat([task2_df, task1_df_filter], axis=0)
 print("task2-new=", task2_df.shape, task1_df_filter.shape, task2_df_extra.shape)
-task2_df_extra.to_csv('/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/train-v0.2-with-task1.csv', encoding='utf8', index=False)
+task2_df_extra.to_csv('/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/train-v0.2-with-task1.csv', encoding='utf8', index=False)
 
 
 conversion_dict = {'irrelevant':'no_substitute', 'exact':'no_substitute' , 'substitute':'substitute', 'complement':'no_substitute'}
@@ -128,6 +128,6 @@ task1_df_filter['substitute_label'] = task1_df_filter['esci_label'].replace(conv
 task1_df_filter.drop('esci_label', axis=1, inplace=True)
 task3_df_extra = pd.concat([task3_df, task1_df_filter], axis=0)
 print("task3-new=", task3_df.shape, task1_df_filter.shape, task3_df_extra.shape)
-task3_df_extra.to_csv('/home/cuixuange/kddcup_2022/v0.2_task3/data/processed/public/task_3_product_substitute_identification/train-v0.2-with-task1.csv', encoding='utf8', index=False)
+task3_df_extra.to_csv('/home/kddcup_2022/v0.2_task3/data/processed/public/task_3_product_substitute_identification/train-v0.2-with-task1.csv', encoding='utf8', index=False)
 
 # 3.3 重新划分训练集、验证集

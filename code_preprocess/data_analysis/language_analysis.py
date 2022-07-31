@@ -19,7 +19,7 @@ import string
 # vaild_df_jp.to_csv('../data_process/flod_5_valid-jp.csv', encoding='utf8', index=False)
 
 """
-/home/cuixuange/kddcup_2022/v0.2_train/output/0.7369    分成不同语言计算F1-Score
+/home/kddcup_2022/v0.2_train/output/0.7369    分成不同语言计算F1-Score
 """
 # micro = 汇总所有语言的计算F1-Score=0.7368
 # vaild_df_us=0.7576531307289011
@@ -32,13 +32,13 @@ import string
 # vaild_df_jp=0.6921478060046189
 
 ############# 加入google-trans数据集合
-# /home/cuixuange/kddcup_2022/v0.2_train/output/0.7394/
+# /home/kddcup_2022/v0.2_train/output/0.7394/
 # vaild_df_us=0.7549285578057068
 # vaild_df_es=0.7236344726894538
 # vaild_df_jp=0.6901462663587374
 
 ############# 加入google-trans + optm-es-us数据集合
-# /home/cuixuange/kddcup_2022/v0.2_train/output/0.7361/
+# /home/kddcup_2022/v0.2_train/output/0.7361/
 # vaild_df_us=0.7515851176042441
 # vaild_df_es=0.7196143922878457
 # vaild_df_jp=0.6876674364896074

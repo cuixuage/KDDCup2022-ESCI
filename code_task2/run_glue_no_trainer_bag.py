@@ -33,10 +33,10 @@ from transformers import (
 )
 from transformers.utils import get_full_repo_name
 from transformers.utils.versions import require_version
-os.environ['TRANSFORMERS_CACHE'] = '/home/cuixuange/kddcup_2022/v0.2_train_for_embbag/.cache/huggingface/'
-os.environ['HF_DATASETS_CACHE'] = '/home/cuixuange/kddcup_2022/v0.2_train_for_embbag/.cache/huggingface/datasets/'
-os.environ['HF_MODULES_CACHE'] = '/home/cuixuange/kddcup_2022/v0.2_train_for_embbag/.cache/huggingface/models/'
-os.environ['HF_METRICS_CACHE'] = '/home/cuixuange/kddcup_2022/v0.2_train_for_embbag/.cache/huggingface/metrics/'
+os.environ['TRANSFORMERS_CACHE'] = '/home/kddcup_2022/v0.2_train_for_embbag/.cache/huggingface/'
+os.environ['HF_DATASETS_CACHE'] = '/home/kddcup_2022/v0.2_train_for_embbag/.cache/huggingface/datasets/'
+os.environ['HF_MODULES_CACHE'] = '/home/kddcup_2022/v0.2_train_for_embbag/.cache/huggingface/models/'
+os.environ['HF_METRICS_CACHE'] = '/home/kddcup_2022/v0.2_train_for_embbag/.cache/huggingface/metrics/'
 
 
 
@@ -175,9 +175,9 @@ def main():
 
     # Some models have set the order of the labels to use, so let's make sure we do use it.
     label_to_id = None
-    brand_vocab = get_vocab_from_file('/home/cuixuange/kddcup_2022/data_process/extra_vocab/brand.txt')
-    color_vocab = get_vocab_from_file('/home/cuixuange/kddcup_2022/data_process/extra_vocab/color.txt')
-    emb_bag_vocab = get_vocab_from_file('/home/cuixuange/kddcup_2022/data_process/extra_ngram/word2vec.wordvectors.vocab_char3.txt')
+    brand_vocab = get_vocab_from_file('/home/kddcup_2022/data_process/extra_vocab/brand.txt')
+    color_vocab = get_vocab_from_file('/home/kddcup_2022/data_process/extra_vocab/color.txt')
+    emb_bag_vocab = get_vocab_from_file('/home/kddcup_2022/data_process/extra_ngram/word2vec.wordvectors.vocab_char3.txt')
     if (
         model.config.label2id != PretrainedConfig(num_labels=num_labels).label2id
         and args.task_name is not None
@@ -427,10 +427,10 @@ def main():
     )
 
     # Get the metric function
-    metric_a = load_metric("/home/cuixuange/kddcup_2022/v0.2_train_for_embbag/datasets_metric/accuracy/accuracy.py")
-    metric_p = load_metric("/home/cuixuange/kddcup_2022/v0.2_train_for_embbag/datasets_metric/precision/precision.py")
-    metric_r = load_metric("/home/cuixuange/kddcup_2022/v0.2_train_for_embbag/datasets_metric/recall/recall.py")
-    metric_f = load_metric("/home/cuixuange/kddcup_2022/v0.2_train_for_embbag/datasets_metric/f1/f1.py")
+    metric_a = load_metric("/home/kddcup_2022/v0.2_train_for_embbag/datasets_metric/accuracy/accuracy.py")
+    metric_p = load_metric("/home/kddcup_2022/v0.2_train_for_embbag/datasets_metric/precision/precision.py")
+    metric_r = load_metric("/home/kddcup_2022/v0.2_train_for_embbag/datasets_metric/recall/recall.py")
+    metric_f = load_metric("/home/kddcup_2022/v0.2_train_for_embbag/datasets_metric/f1/f1.py")
 
     # Train!
     total_batch_size = args.per_device_train_batch_size * accelerator.num_processes * args.gradient_accumulation_steps

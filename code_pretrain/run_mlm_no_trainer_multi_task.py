@@ -59,10 +59,10 @@ from transformers import (
 )
 from transformers.utils import get_full_repo_name
 from transformers.utils.versions import require_version
-os.environ['TRANSFORMERS_CACHE'] = '/home/cuixuange/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/'
-os.environ['HF_DATASETS_CACHE'] = '/home/cuixuange/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/datasets/'
-os.environ['HF_MODULES_CACHE'] = '/home/cuixuange/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/models/'
-os.environ['HF_METRICS_CACHE'] = '/home/cuixuange/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/metrics/'
+os.environ['TRANSFORMERS_CACHE'] = '/home/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/'
+os.environ['HF_DATASETS_CACHE'] = '/home/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/datasets/'
+os.environ['HF_MODULES_CACHE'] = '/home/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/models/'
+os.environ['HF_METRICS_CACHE'] = '/home/kddcup_2022/v0.2_train_pretrain/.cache/huggingface/metrics/'
 
 logger = logging.getLogger(__name__)
 require_version("datasets>=1.8.0", "To fix: pip install -r examples/pytorch/language-modeling/requirements.txt")

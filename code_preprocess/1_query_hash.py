@@ -13,8 +13,8 @@ if not hashseed:
     os.execv(sys.executable, [sys.executable] + sys.argv)
 
 
-train_file = "/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/train-v0.2.csv"
-product_file = "/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv"
+train_file = "/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/train-v0.2.csv"
+product_file = "/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/product_catalogue-v0.2.csv"
 query_df = pd.read_csv(train_file)
 # product_df = pd.read_csv(product_file, skipinitialspace=True, usecols=['product_id', 'product_title', 'product_locale'])
 product_df = pd.read_csv(product_file, skipinitialspace=True)
@@ -40,7 +40,7 @@ train_df.to_csv("flod_5_train.csv", encoding='utf8', index=False)
 vaild_df.to_csv("flod_5_valid.csv", encoding='utf8', index=False)
 
 # 4. generate public test file
-query_test_file = "/home/cuixuange/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/test_public-v0.2.csv"
+query_test_file = "/home/kddcup_2022/v0.2_task2/data/processed/public/task_2_multiclass_product_classification/test_public-v0.2.csv"
 query_test_df = pd.read_csv(query_test_file)
 public_test_df = pd.merge(query_test_df, product_df, how='left', left_on=['query_locale','product_id'], right_on=['product_locale', 'product_id'])
 public_test_df['part_id'] = '-1'        # 2022.04.20 对齐train、vaild格式
@@ -52,13 +52,13 @@ public_test_df.to_csv("flod_5_test.csv", encoding='utf8', index=False)
 
 
 ######################################## 采样1w条数据
-productid_vaild_file = "/home/cuixuange/kddcup_2022/data_process/flod_5_train.csv"
+productid_vaild_file = "/home/kddcup_2022/data_process/flod_5_train.csv"
 df = pd.read_csv(productid_vaild_file, na_values="", keep_default_na=True)
 sample_df = df.iloc[0:1000]
 sample_df.to_csv("flod_5_train-head1k.csv", encoding='utf8', index=False)
 print(sample_df.head())
 
-productid_vaild_file = "/home/cuixuange/kddcup_2022/data_process/flod_5_valid.csv"
+productid_vaild_file = "/home/kddcup_2022/data_process/flod_5_valid.csv"
 df = pd.read_csv(productid_vaild_file, na_values="", keep_default_na=True)
 sample_df = df.iloc[0:1000]
 sample_df.to_csv("flod_5_valid-head1k.csv", encoding='utf8', index=False)
