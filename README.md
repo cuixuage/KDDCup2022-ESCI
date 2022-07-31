@@ -7,8 +7,9 @@ In fine-tuning stage, we use confident learning, exponential moving average meth
 Moreover, we use a multi-granular semantic unit to discover the queries and products textual metadata for enhancing the representation of the model.   
 Our approach obtained competitive results and ranked top-8 in three tasks.   
     
-![](./paper/poser_presentation.png)
-
+![](./paper/poser_presentation.png)  
+  
+  
 **2.Code & Ranking**     
 ZhichunRoad At Amazon KDD Cup 2022    
 ```
