@@ -1,5 +1,6 @@
 # ZhichunRoad@Amazon KDD Cup 2022   
-MultiTask Pre-Training for E-Commerce Product Search   
+Paper: [MultiTask Pre-Training for E-Commerce Product Search](https://amazonkddcup.github.io/assets/submissions/papers/4952.pdf)      
+[Slides](https://amazonkddcup.github.io/assets/submissions/slides/4952.pdf), [Video](https://www.youtube.com/watch?v=1Hb9U8ds4VU&feature=youtu.be)     
    
 **1.Abstract:**    
 In this paper, we propose a robust multilingual model to improve the quality of search results.   
